@@ -1,0 +1,82 @@
+.header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #E8EAED;
+
+    @media (min-width: $big) {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .header__logo {
+        width: 64px;
+        height: 64px;
+        cursor: pointer;
+        background-color: $secondary-color;
+        
+        @media (min-width: $big) {
+            display: none;
+        }
+    }
+
+    .header__nav-list {
+        display: none;
+
+        @media (min-width: $big) {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .header__logo {
+                display: inline-block;
+                width: 56px;
+                height: 56px;
+                cursor: pointer;
+                background-color: $secondary-color;
+            }
+
+            a {
+                font-family: 'TT Norms Bold';
+                font-size: 15px;
+                text-decoration: none;
+                color: $main-color;
+                transition: .25s;
+
+                &:hover {
+                    opacity: .5;
+                    transition: .25s;
+                }
+            }
+            
+            a:not(:last-child) {
+                margin-right: 50px;
+            }
+        }
+    }
+
+    .header__nav {
+        @media (min-width: $big) {
+            width: 100%;
+        }
+    }
+
+    .header__nav-btn,
+    .header__profile {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        background-image: url("../img/nav.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        @media (min-width: $big) {
+            display: none;
+        }
+    }
+
+    .header__profile {
+        background-image: url("../img/profile.png");
+    }
+}

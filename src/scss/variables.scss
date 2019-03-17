@@ -1,0 +1,23 @@
+//global
+
+$main-color: #333333;
+$secondary-color: #D62323;
+$gray-color: #C9C9C9;
+$border: 1px solid #E8EAED;
+
+$medium: 670px;
+$big: 1024px;
+$large: 1440px;
+$xlarge: 1920px;
+
+body {
+    color: $main-color;
+    font-family: 'TT Norms';
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    font-size: 0;
+    position: relative;
+}

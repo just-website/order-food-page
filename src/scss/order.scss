@@ -1,0 +1,235 @@
+.order  {
+    display: none;
+    min-width: 320px;
+    
+    box-sizing: border-box;
+    vertical-align: top;
+    font-size: 16px;
+    font-family: 'TT Norms Bold';
+    position: absolute;
+    top: 0;
+    background: #fff;
+    height: 100%;
+    width: 100%;
+
+    &.show {
+        display: block;
+        @media (min-width: $big) {
+            display: inline-block;
+        }
+    }
+
+    @media (min-width: $big) {
+        display: inline-block;
+        position: static;
+        width: 320px;
+    }
+
+    .order__form-top {
+        padding: 40px 30px;
+    }
+
+    .order__form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .order__form-ttl {
+        font-size: 24px;
+        line-height: 28px;
+    }
+
+    .order__form-clear {
+        width: 14px;
+        height: 18px;
+        cursor: pointer;
+        background-image: url('../img/clear.png');
+    }
+
+    .order__item {
+        display: flex;
+        align-items: center;
+        border-bottom: $border;
+    }
+
+    .order__item-dscr {
+        flex-basis: 165px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .order__item-cntr {
+        flex-basis: 30px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        transition: .25s;
+
+        &:hover {
+            transition: .25s;
+            cursor: pointer;
+            background-color: #F0F0F2;
+
+            .order__item-cntr_up-arrow,
+            .order__item-cntr_down-arrow {
+                display: block; 
+            }
+        }
+    }
+
+    .order__item-cntr_up-arrow,
+    .order__item-cntr_down-arrow {
+        width: 100%;
+        height: 25px;
+        background-image: url('../img/up-arrow.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        @media (min-width: $big) {
+            display: none;
+        }
+    }
+
+    .order__item-cntr_down-arrow {
+        background-image: url('../img/down-arrow.png');
+    }
+
+    .order__item-dscr-weight {
+        color: $gray-color;
+        margin-left: 10px;
+    }
+
+    .order__item-price {
+        margin-left: auto;
+    }
+
+    .order-address {
+        font-size: 15px;
+        font-family: 'TT Norms';
+        padding-left: 55px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        position: relative;
+        border-bottom: $border;
+        border-top: $border; 
+
+        &:before {
+            display: block;
+            position: absolute;
+            content: '';
+            background-image: url('../img/address.png');
+            width: 20px;
+            height: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            left: 35px;
+            bottom: 14px;
+        }
+    }
+
+    .order__form-bottom {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        right: 0;
+
+        @media (min-width: $big) {
+            width: 320px;
+        }
+    }
+
+    .order__total {
+        font-size: 0;
+    }
+
+    .order__total-count {
+        width: 50%;
+        display: inline-block;
+        font-size: 22px;
+        padding-left: 30px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        box-sizing: border-box;
+
+        @media (min-width: $big) {
+            width: 160px;
+        }
+
+        &:first-child {
+            border-right: $border;
+        }
+    }
+
+    .order__total-dscr {
+        display: block;
+        font-size: 14px;
+        color: $gray-color;
+    }
+
+    .order__submit button {
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #ffffff;
+        background-color: $secondary-color;
+        padding: 20px;
+        text-align: center;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-family: 'TT Norms Bold';
+        cursor: pointer;
+        transition: .25s;
+
+        &:hover {
+            opacity: .75;
+            transition: .25s;
+        }
+    }
+    
+    .order__form_wrapper_full {
+        display: none;
+    }
+
+    .order__form_wrapper_preview {
+        .order__form-ttl {
+            margin: 0 auto;
+        }
+    }
+
+    .order__form-bg {
+        font-family: 'TT Norms Light';
+        max-width: 260px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 18px;
+        color: #A7A7A7;
+    }
+}
+
+.order-btn {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background: #ffffff;
+    border-top: $border;
+
+    @media (min-width: $big) {
+        display: none;
+    }
+    
+    .order-btn__button {
+        padding: 15px;
+        font-family: "TT Norms Bold";
+        font-size: 15px;
+        margin: 0 auto;
+        cursor: pointer
+    }
+
+    span {
+        color: $secondary-color;
+        margin-left: 10px;
+    }
+}

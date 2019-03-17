@@ -1,0 +1,174 @@
+.popup-wrapper {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    @media (min-width: $big) {
+        overflow: hidden;
+    }
+}
+
+.popup {
+    display: none;
+    position: relative;
+    max-width: 660px;
+    top: 0;
+    background-color: #ffffff;
+    font-weight: bold;
+    cursor: default;
+
+    @media (min-width: $medium) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: $big) {
+        width: 100%;
+        max-width: none;
+        font-size: 0;
+        position: absolute;
+        top: auto;
+        bottom: 0;
+    }
+
+    .popup__img {
+
+        padding: 80px 15px 15px;
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 100%;
+        }
+
+        @media (min-width: $big) {
+            max-width: calc(100% - 470px);
+            box-sizing: border-box;
+            padding: 15px;
+            min-height: 690px;
+            
+            img {
+                margin-top: 10%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 75%;
+                max-width: 600px;
+            }
+        }
+    }
+
+    .popup__dscr-wrap {
+        padding: 40px 15px;
+        background-color: #E8EAED;
+        font-size: 15px;
+        line-height: 21px;
+        font-family: "TT Norms Light";
+
+        @media (min-width: $big) {
+            padding-top: 140px;
+            padding-left: 75px;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 470px;
+            vertical-align: top;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+
+        }
+
+        span {
+            color: $gray-color;
+        }
+    }
+
+    .popup__dscr-ttl {
+        font-family: 'TT Norms Bold';
+        font-size: 24px;
+        line-height: 27px;
+        margin-bottom: 30px;
+
+        @media (min-width: $big) {
+            margin-bottom: 50px;
+        }
+    }
+
+    .popup__dscr-subttl {
+        opacity: .3;
+        margin-bottom: 15px;
+    } 
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .popup__dscr {
+        max-width: 345px;
+        margin-bottom: 30px;
+
+        @media (min-width: $big) {
+            margin-bottom: 40px;
+        }
+    }
+
+    .popup__dscr-info {
+        flex-basis: 50%;
+        margin-top: 12px;
+        font-size: 14px;
+        position: relative;
+    }
+
+    .popup__val-item {
+        display: inline-block;
+        margin-right: 30px;
+    }
+
+    .popup__val-ttl {
+        font-size: 18px;
+        font-family: 'TT Norms Bold';
+    }
+    
+    .popup__val-dscr {
+        font-size: 12px;
+        opacity: .4;
+    }
+
+    .popup__close {
+        position: absolute;
+        top: 0px;
+        background-color:#E8EAED;
+        width: 80px;
+        height: 80px;
+        right: 0px;
+        cursor: pointer;
+        z-index: 1;
+
+        &::before,
+        &::after {
+            display: block;
+            position: absolute;
+            content: '';
+            width: 2px;
+            height: 30px;
+            background-color: #000;
+            top: calc(50% - 15px);
+            right: 40px;
+            transform: rotate(45deg);
+        }
+
+        &::after {
+            transform: rotate(-45deg);
+
+        }
+    }
+
+}
