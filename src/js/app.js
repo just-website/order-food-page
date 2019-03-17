@@ -58,7 +58,7 @@ $(window).on('load', function() {
             itemHandler.add(id);
         });
         
-        cart.$basket.on('remove', function (event, id, price) {//есть возможность раширять логику, просто добавив сюда обработчик(например какой нибудь запрос к серверу)
+        cart.$basket.on('removeItem', function (event, id, price) {//есть возможность раширять логику, просто добавив сюда обработчик(например какой нибудь запрос к серверу)
             cartItemHandler.remove(id, price);
             itemHandler.remove(id);
         });
@@ -211,6 +211,7 @@ $(window).on('load', function() {
         $btn.on('click', function() {
             $btn.hide();
             $('section.order').addClass('show');
+            $('html, body').animate({ scrollTop: 0 }, 500);
         });
     })($('.j-order-btn'));
 

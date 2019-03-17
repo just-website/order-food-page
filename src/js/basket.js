@@ -44,7 +44,7 @@ export default class Basket {
         } else {
             this.itemsList[id].count--;
         }
-        this.$basket.trigger('remove', [id, this.getPrice(id)]);
+        this.$basket.trigger('removeItem', [id, this.getPrice(id)]);
         this.getTotal();
     }
 
