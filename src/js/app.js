@@ -33,7 +33,7 @@ $(window).on('load', function() {
         $('.j-product-dscr').on('click', function() {
             const id = $(this).closest('.j-product-item').data('id');
             $.ajax({ //тут должен быть запрос к серверу с передачей id товара, сейчас просто заглушка 
-                url: '/www/data.json',
+                url: 'www/data.json',
                 success: (data) => {
                     popup.init(data[id]);
                 },
@@ -137,7 +137,7 @@ $(window).on('load', function() {
             $list.show('fast');
             $(this).hide();
         });
-        
+
         $(document).on('click', function(event) {
             if ($(event.target).closest('.j-category-list').length) {
                 return

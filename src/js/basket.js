@@ -16,7 +16,7 @@ export default class Basket {
 
     getDataItem(id) { //счетаю, что для корзины будет правильнее дёргать инфу с сервера (а не брать из HTML)
         return $.ajax({ //тут должен быть запрос к серверу с передачей id товара, сейчас просто заглушка 
-            url: '/www/data.json'
+            url: 'www/data.json'
         }).then(data => data[id])
         .fail(err => console.error(`oops: ${err}`));
     }
