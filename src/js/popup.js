@@ -60,17 +60,23 @@ export default class Popup {
 
     showAnimation() {
         this.$wrapper.css('display', 'block');
+        $('main, header').addClass('is-blur');
         
         this.$popup.slideDown(400, () => {
-            // this.$popup.find('.j-img').slideDown(250);
-            $('body').css('overflow', 'hidden');
+            let delay = 0;
+            this.$popup.find('.j-img').slideDown( 300, function() {
+                this.$popup.find('.popup__dscr-wrap div').each(function () {
+                    $(this).delay(delay).slideDown();
+                    delay += 50;
+                });
+            }.bind(this));
         });
     }
 
     close() {
         this.$popup.slideUp(250, () =>{
             this.$wrapper.css('display', 'none');
-            $('body').css('overflow', 'visible');
         });
+        $('main, header').removeClass('is-blur');
     }
 }

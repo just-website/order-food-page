@@ -45,6 +45,7 @@
         align-items: center;
 
         img {
+            display: none;
             width: 100%;
         }
 
@@ -88,6 +89,10 @@
         span {
             color: $gray-color;
         }
+
+        &>div {
+            display: none;
+        }
     }
 
     .popup__dscr-ttl {
@@ -128,8 +133,10 @@
     }
 
     .popup__val-item {
-        display: inline-block;
+        // display: inline-block;
         margin-right: 30px;
+        display: none;
+        float: left;
     }
 
     .popup__val-ttl {

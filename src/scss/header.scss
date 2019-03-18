@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #E8EAED;
+    transition: .5s;
 
     @media (min-width: $big) {
         padding-top: 8px;
