@@ -24,8 +24,12 @@
 
     .header__nav-list {
         display: none;
+        height: 0;
+        transition: .25s;
+        height: 0;
 
         @media (min-width: $big) {
+            height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -55,6 +59,35 @@
                 margin-right: 50px;
             }
         }
+
+        &.is-active {
+            transition: .25s;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            z-index: 10;
+            background-color: #FFFFFF;
+            position: fixed;
+            top: 95px;
+            left: 0;
+            padding-left: 15px;
+            height: auto;
+
+            a {
+                font-family: 'TT Norms Bold';
+                color: $main-color;
+                padding: 15px 0;
+                text-decoration: none;
+
+                &:hover {
+                    opacity: .5;
+                }
+            }
+
+            a:nth-child(4) {
+                display: none;
+            }
+        }
     }
 
     .header__nav {
@@ -80,4 +113,17 @@
     .header__profile {
         background-image: url("../img/profile.png");
     }
+    
+    .header-overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #0000003b;
+        z-index: 1;
+        overflow: hidden;
+        display: none;
+        left: 0;
+        top: 95px;
+    }
+
 }

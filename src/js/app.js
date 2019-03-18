@@ -215,4 +215,17 @@ $(window).on('load', function() {
         });
     })($('.j-order-btn'));
 
+    //кнопка навигации на мобильных
+    (function($navBtn) {
+        if (!$navBtn.length) {
+            return;
+        }
+
+        $navBtn.on('click', function() {
+            $('.j-header-nav').toggleClass('is-active');
+            $('.j-header-overlay').toggle();
+            $('body').toggleClass('is-hidden');
+        });
+    })($('.j-nav-btn'));
+
 });

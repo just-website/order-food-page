@@ -192,6 +192,9 @@ main {
   filter: blur(5px);
   transition: .5s; }
 
+.is-hidden {
+  overflow: hidden; }
+
 @font-face {
   font-family: 'TT Norms Bold';
   src: url("../fonts/TT-Norms/TTNorms-Bold.eot");
@@ -240,9 +243,13 @@ main {
       .header .header__logo {
         display: none; } }
   .header .header__nav-list {
-    display: none; }
+    display: none;
+    height: 0;
+    transition: .25s;
+    height: 0; }
     @media (min-width: 1024px) {
       .header .header__nav-list {
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center; }
@@ -263,6 +270,27 @@ main {
             transition: .25s; }
         .header .header__nav-list a:not(:last-child) {
           margin-right: 50px; } }
+    .header .header__nav-list.is-active {
+      transition: .25s;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      z-index: 10;
+      background-color: #FFFFFF;
+      position: fixed;
+      top: 95px;
+      left: 0;
+      padding-left: 15px;
+      height: auto; }
+      .header .header__nav-list.is-active a {
+        font-family: 'TT Norms Bold';
+        color: #333333;
+        padding: 15px 0;
+        text-decoration: none; }
+        .header .header__nav-list.is-active a:hover {
+          opacity: .5; }
+      .header .header__nav-list.is-active a:nth-child(4) {
+        display: none; }
   @media (min-width: 1024px) {
     .header .header__nav {
       width: 100%; } }
@@ -280,6 +308,16 @@ main {
         display: none; } }
   .header .header__profile {
     background-image: url("../img/profile.png"); }
+  .header .header-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: #0000003b;
+    z-index: 1;
+    overflow: hidden;
+    display: none;
+    left: 0;
+    top: 95px; }
 
 .product {
   margin: 0 auto;

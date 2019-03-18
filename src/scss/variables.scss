@@ -27,3 +27,7 @@ main {
     filter: blur(5px);
     transition: .5s;
 }
+
+.is-hidden {
+    overflow: hidden;
+}
