@@ -189,7 +189,7 @@ main {
   transition: .5s; }
 
 .is-blur {
-  filter: blur(5px);
+  filter: blur(2px);
   transition: .5s; }
 
 .is-hidden {
